@@ -1,0 +1,11 @@
+FROM openjdk:8-alpine
+
+RUN apk add --upgrade --no-cache bash
+
+COPY kafka_2.13-3.2.0/libs kafka/libs
+COPY kafka_2.13-3.2.0/bin/* kafka/bin/
+COPY kafka_2.13-3.2.0/config kafka/config
+
+WORKDIR kafka
+
+ENTRYPOINT ["bin/kafka-server-start.sh", "config/server.properties"]
