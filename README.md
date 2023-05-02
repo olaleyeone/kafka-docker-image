@@ -4,7 +4,8 @@
 `curl "https://dlcdn.apache.org/kafka/3.2.0/kafka_2.13-3.2.0.tgz" > kafka_2.13-3.2.0.tgz`
 
 ## Build docker image
-`docker build . -f Dockerfile-3.2.0 -t olaleye/kafka:3.2.0`
+`docker build . -f Dockerfile-3.2.0 -t olaleye/kafka:3.2.0_arm`
+`docker build . -f Dockerfile-3.2.0 --platform linux/amd64 -t olaleye/kafka:3.2.0`
 
 ## use image for zookeeper and kafka
 ```
